@@ -129,9 +129,13 @@ app.get('/:customerListName', function(req, resp){
 
 })
 
+let port = process.env.PORT;
 
-port = 5000
+if(port == null || port = ""){
+  port = 5000
+}
 
-app.listen(port, function(req, resp) {
-  console.log('listening on port: ' + port)
+
+app.listen(port, function() {
+  console.log('Server has started successfully')
 })
