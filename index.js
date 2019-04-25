@@ -9,8 +9,11 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
+const productionDB = "mongodb+srv://ademola:Password123@cluster0-nyquh.mongodb.net/todoListDB";
+const localDB = "mongodb://localhost:27017/todoListDB";
+
 app.use(express.static("public"));
-mongoose.connect("mongodb+srv://ademola:Password123@cluster0-nyquh.mongodb.net/todoListDB", {
+mongoose.connect( localDB, {
   useNewUrlParser: true
 });
 
